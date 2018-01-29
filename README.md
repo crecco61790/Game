@@ -30,7 +30,8 @@ full time was not an option.  After 4 years I finally built up enough equity  wi
 me to adjust my work schedule to miss 2 days a week (as long as I commit a minimum of 40 hours and come in on Saturday).  
 I was drawn to New Paltz because of it's pristine reputation and the scheduling  potential to block 3 courses a 
 semester into 2 days a week.  I have made the absolute most of those 2 days a week for the last year by studying 
-Data Structures, Computer Systems, Database design, Algorithms, Operating Systems and Foundations of Computer Science.
+Data Structures, Computer Systems, Database design, Data analytics, Algorithms, Operating Systems and 
+Foundations of Computer Science.  In those classes I became familiar with java, C++, SQL, Python and R
 
 A traditional in classroom program is exactly what I needed.  I have taken everything I have learned in school and applied 
 it to all facets of my job.  I have designed and implemented a number of programs that have made my job more accurate and 
