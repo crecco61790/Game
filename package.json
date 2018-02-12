@@ -1,0 +1,26 @@
+{
+  "name": "Game",
+  "version": "1.0.0",
+  "description": "I am currently in my final semester of the masters in computer science program at SUNY New Paltz.\r I have been interested in technology all of my life.  In middle school when everyone was still listening to walkmen \r I mowed lawns and saved for two summers to buy an mp3 player (5 years before the release of the ipod).  I was also \r very interested in business and I was always on the look out for ways to combine my love for tech and my passion for\r making money.  I capitalized on the previously mentioned cd market and purchased an external cd writing drive and\r began selling custom cds to anyone with $10 and a playlist (to any and all law enforcement agencies\r reading, this is not an admission of guilt of piracy).  When cd writing became mainstream tech, I realized how\r quickly the consumer market was able to move and I upgraded to a dvd burner to out pace my competition.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crecco61790/Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crecco61790/Game/issues"
+  },
+  "homepage": "https://github.com/crecco61790/Game#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
