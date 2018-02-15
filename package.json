@@ -1,5 +1,5 @@
 {
-  "name": "Game",
+  "name": "game",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,10 @@
     "express": "^4.16.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
+  },
+
+  "devDependencies": {
+
+    
   }
 }
