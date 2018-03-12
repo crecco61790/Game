@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 
 
 import { AppComponent } from './app.component';
@@ -18,7 +20,12 @@ import { GameComponent } from './game/game.component';
     GameComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: 'home', component: HomeComponent},
+      { path: 'game', component: GameComponent},
+      { path: '', redirectTo: '/home', pathMatch: 'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
