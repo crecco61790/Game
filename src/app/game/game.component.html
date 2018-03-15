@@ -1,3 +1,42 @@
-<p>
-  game works!
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">My Quotes</div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let quote of Model.MyQuotes"class="list-group-item">
+              {{quote}}
+            </li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+        <div class="card-header">Played Quotes</div>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let quote of Model.MyQuotes"class="list-group-item">
+              {{quote}}
+            </li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+    Picture
+    <div class="card">
+      <img class="card-img-top card-img-bottom" [src]="Model.Picture">
+    </div>
+  </div>
+  <div class="cold-md-4">
+    <div class="card">
+        <div class="card-header">Other Players</div>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let quote of Model.MyQuotes"class="list-group-item">
+                {{quote}}
+              </li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+  </div>
+</div>
