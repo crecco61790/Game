@@ -7,13 +7,17 @@ export  class Game {
         "There are two extremes"
     ];
     Players: User[] = [
-        {Name: 'Player 1'},
-        {Name: 'Player 2'},
-        {Name: 'Player 3'}
+        { Name: 'Steve C' },
+        { Name: 'Player 2' }
+        { Name: 'Player 3' }
     ];
-    Picture: string = 'https://media3.s-nbcnews.com/j/msnbc/components/video/201803/tdy_news_welker_trump_180315_1920x1080.nbcnews-ux-1240-700.jpg';
-    PlayedQuotes: Quote[] = [
 
+    Dealer: string = "Steve C";
+    
+    Picture: string = 'https://media3.s-nbcnews.com/j/msnbc/components/video/201803/tdy_news_welker_trump_180315_1920x1080.nbcnews-ux-1240-700.jpg';
+    
+    PlayedQuotes: Quote[] = [
+        { Text: "That's fake news", PlayerName: 'Player 2', Chosen: false}
     ];
 }
 
