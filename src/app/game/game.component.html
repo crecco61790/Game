@@ -22,11 +22,11 @@
                       {{quote.Text}}
                       <span *ngIf="!IsEveryoneDone() || (!IAmTheDealer() && !ChosenQuote())" class="badge badge-light">hidden</span>
                       <span *ngIf="ChosenQuote()" class="badge badge-primary">{{quote.PlayerName}}</span>
-                      <button *ngIf="!IsEveryoneDone() && IAmTheDealer() && !ChosenQuote()"
-                              (click)="quote.Chosen = true"
-                              class="btn btn-sm">
-                              Choose
-                            </button>
+                      <button *ngIf="IsEveryoneDone() && IAmTheDealer() && !ChosenQuote()"
+                             (click)="quote.Chosen = true"
+                             class="btn btn-sm btn-primary">
+                             Choose
+                      </button>
                   </li>
               </ul>
           </div>

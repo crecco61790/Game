@@ -8,8 +8,8 @@ export  class Game {
     ];
     Players: User[] = [
         { Name: 'Steve C' },
-        { Name: 'Player 2' }
-        { Name: 'Player 3' }
+        { Name: 'Player 2' },
+        { Name: 'Player 3' },
     ];
 
     Dealer: string = "Steve C";
