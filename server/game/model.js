@@ -1,3 +1,5 @@
+var axios = require("axios");
+
 const QuotesStack = [
         "Wisdom is the reward you get for a lifetime of listening when you'd have preferred to talk. -Doug Larson",
         "If you make listening and observation your occupation, you will gain much more than you can by talk. -Robert Baden-Powell",
@@ -102,21 +104,39 @@ const QuotesStack = [
 
 ];
 
+
+
 var iCurrentQuote = 0;
 
-const PicturesStack = [
-
+var PictureStack = [
+    "https://media4.s-nbcnews.com/j/newscms/2018_14/2387691/180404-richard-nixon-john-ehrlichman-se-452p_6677adfefeed7a627ee5950008302724.focal-1000x500.jpg",
+    "https://media2.s-nbcnews.com/j/newscms/2018_14/1994596/170510-richard-nixon-mn-0955_2d2cadddf3528c610cba5e13ff6a29da.fit-560w.jpg",
 ];
+
+axios.get('https://api.imgflip.com/get_memes')
+        .then( response => PictureStack = response.data.data.memes)
+
 var iCurrentPicture = 0;
-/*
-class Game {
-    Players;
-    DealerId;
 
-    PlayedQuotes;
-    Picture;
+function Game() {
 
-    GetQuotes = () => QuotesStack.slice(iCurrentQuote, iCurrentQuote += 7);
-}*/
+    this.Players = [];
+    this.DealerId = null;
+
+    this.PlayedQuotes = [];
+    this.Picture = null;
+
+    this.GetQuotes = () => QuotesStack.slice(iCurrentQuote, iCurrentQuote += 7);
+    this.FlipPicture = () => this.Picture = PictureStack[iCurrentPicture = (iCurrentPicture+1) % PictureStack.length ];
+
+    this.SubmitQuote = (text, playerId) => this.PlayedQuotes.push({ Text: text, PlayerId: playerId });
+    this.ChooseQuote = text => {
+        this.PlayedQuotes.find(x => x.Text == text).Chosen = true;
+        this.DealerId = this.Players[this.DealerId = (this.DealerId + 1) % this.Players.length]
+    }
+    
+    
+}
+
 
 module.exports = Game;
