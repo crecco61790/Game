@@ -14,12 +14,11 @@ export class GameComponent implements OnInit {
     Me = new User();
     private _api = "http://localhost:8080/game";
 
-  constructor(private http: Http) {
-    this.Me.Name = "Steve C"
-    
-    http.get(this._api + "/quotes").subscribe(data => this.Me.MyQuotes = data.json())
-    setInterval(() => (this.refresh(), 1000)
-  }
+    constructor(private http: Http) {
+      this.Me.Name = "Steve C"
+      http.get(this._api + "/quotes").subscribe(data=> this.Me.MyQuotes = data.json())
+      setInterval(()=> this.refresh(), 1000)
+    }
 
   refresh(){
     this.http.get(this._api + "/state")
