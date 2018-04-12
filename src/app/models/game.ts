@@ -10,8 +10,9 @@ export  class Game {
 
     Dealer: string = "Steve C";
     
-    Picture: string = 'https://media3.s-nbcnews.com/j/msnbc/components/video/201803/tdy_news_welker_trump_180315_1920x1080.nbcnews-ux-1240-700.jpg';
-    
+    Picture: {
+        url: string
+    }
     PlayedQuotes: Quote[] = [
         { Text: "That's fake news", PlayerName: 'Player 2', Chosen: false}
     ];
