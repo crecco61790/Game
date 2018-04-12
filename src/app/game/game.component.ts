@@ -25,7 +25,10 @@ export class GameComponent implements OnInit {
         .subscribe(data => this.Model = data.json())
   }
 
-  ngOnInit() {
+  flipPicture(e: MouseEvent){
+    this.http.post(this._api + "/picture", {})
+      .subscribe();
+
   }
 
   submitQuote(e: MouseEvent, text: string){
@@ -36,6 +39,10 @@ export class GameComponent implements OnInit {
     this.Model.PlayedQuotes.push({ Text: text, PlayerName: this.Me.Name, Chosen: false});
     this.Me.MyQuotes.splice( this.Me.MyQuotes.indexOf(text), 1 );
   }
+  ngOnInit() {
+  }
+
+
 
   MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerName == this.Me.Name );
 
