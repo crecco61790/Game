@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from "@angular/http"; 
+import { Http } from "@angular/http";
 import { Game, User, Quote } from '../models/game';
-
 
 @Component({
   selector: 'app-game',
@@ -14,21 +13,23 @@ export class GameComponent implements OnInit {
     Me = new User();
     private _api = "http://localhost:8080/game";
 
-    constructor(private http: Http) {
-      this.Me.Name = "Steve C"
-      http.get(this._api + "/quotes", { params: { playerId: this.Me.Name} }).subscribe(data=> this.Me.MyQuotes = data.json())
-      setInterval(()=> this.refresh(), 1000)
-    }
+  constructor(private http: Http) {
+    this.Me.Name = "Moshe Plotkin"
+    http.get(this._api + "/quotes", { params : { playerId: this.Me.Name } }).subscribe(data=> this.Me.MyQuotes = data.json())
+    setInterval(()=> this.refresh(), 1000)
+  }
+
+  ngOnInit() {
+  }
 
   refresh(){
     this.http.get(this._api + "/state")
-        .subscribe(data => this.Model = data.json())
+        .subscribe(data=> this.Model = data.json())
   }
 
   flipPicture(e: MouseEvent){
-    this.http.post(this._api + "/picture", {})
-      .subscribe();
-
+    this.http.post(this._api + "/picture",{})
+        .subscribe();
   }
 
   submitQuote(e: MouseEvent, text: string){
@@ -36,24 +37,15 @@ export class GameComponent implements OnInit {
 
     if(this.MyPlayedQuote()) return;
 
-      this.http.post(this._api + "/quotes", {Text: text, PlayerId: this.Me.Name})
+    this.http.post(this._api + "/quotes", { Text: text, PlayerId: this.Me.Name })
         .subscribe(data=> {
-          if(data.json().success)
-            this.Me.MyQuotes.splice( this.Me.MyQuotes.indexOf(text), 1 );
-
+            if(data.json().success){
+                this.Me.MyQuotes.splice( this.Me.MyQuotes.indexOf(text), 1 );
+            }
         });
   }
-  ngOnInit() {
-  }
-
-
 
   MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerId == this.Me.Name );
-
   ChosenQuote = () => this.Model.PlayedQuotes.find( x => x.Chosen );
-
-  IsEveryoneDone = () => this.Model.PlayedQuotes.length == this.Model.PlayedQuotes.length - 1;
-
+  IsEveryoneDone = () => this.Model.PlayedQuotes.length == this.Model.Players.length - 1;
   IAmTheDealer = () => this.Me.Name == this.Model.DealerId;
-  
-}

@@ -1,27 +1,19 @@
 
-export  class Game {
 
 
-    Players: User[] = [
-        { Name: 'Steve C', MyQuotes: [] },
-        { Name: 'Player 2', MyQuotes: [] },
-        { Name: 'Player 3', MyQuotes: [] },
-    ];
+export class Game {
 
-    DealerId: string = "Steve C";
-    
+    Players: User[];
+    DealerId: string;
     Picture: {
         url: string
-    }
-    PlayedQuotes: Quote[] = [
-        { Text: "That's fake news", PlayerId: 'Player 2', Chosen: false}
-    ];
+    };
+    PlayedQuotes: Quote[];
 }
 
 export class User {
     Name: string;
-
-    MyQuotes:  string[];
+    MyQuotes: string[];
 }
 
 export class Quote {
