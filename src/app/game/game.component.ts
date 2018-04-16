@@ -49,3 +49,4 @@ export class GameComponent implements OnInit {
   ChosenQuote = () => this.Model.PlayedQuotes.find( x => x.Chosen );
   IsEveryoneDone = () => this.Model.PlayedQuotes.length == this.Model.Players.length - 1;
   IAmTheDealer = () => this.Me.Name == this.Model.DealerId;
+}
