@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
 import { Game, User, Quote } from '../models/game';
 import { MessagesService } from '../services/messages.service';
+import { GameService } from '../services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -12,10 +14,19 @@ export class GameComponent implements OnInit {
 
     Model = new Game();
     Me = new User();
+
     private _api = "http://localhost:8080/game";
 
-  constructor(private http: Http, private_Messages: MessagesService) {
-    this.Me.Name = "Steve C"
+  constructor(private http: Http, 
+    private_Messages: MessagesService, 
+    private _Game:  GameService, 
+    private _Router: Router) {
+    
+    this.Me = _Game.Me;
+    if(!this.Me){
+      _Router.navigate(['/login']);
+    }
+    
     http.get(this._api + "/quotes", { params : { playerId: this.Me.Name } }).subscribe(data=> this.Me.MyQuotes = data.json())
     setInterval(()=> this.refresh(), 1000)
   }
