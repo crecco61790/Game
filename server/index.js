@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 const simple = require('./simpleController');
 const game = require('./game/controller');
@@ -14,17 +14,17 @@ const port = 8080;
 
 app
     .use(bodyParser.json())
-    .use(bodyParser.urlencoded({ extended: false}))
+    .use(bodyParser.urlencoded({ extended: false }))
     .use('/', (req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "*");
-        next();
+        next();      
     })
     .use('/', express.static(path.join(__dirname, "../dist/")))
     .use('/simple', simple)
     .use('/game', game)
     .use('/', (req, res, next) => {
-        res.sendFile(__dirname, "../dist/index.html");
+        res.sendFile(path.join(__dirname, "../dist/index.html"));
     })
     .listen(port);
 

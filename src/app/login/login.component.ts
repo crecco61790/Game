@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(name: string, password: string){
-    this._Game.login(name, password);
+      this._Game.login(name, password);
   }
+
 }

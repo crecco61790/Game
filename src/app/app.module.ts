@@ -13,6 +13,7 @@ import { GameService } from './services/game.service';
 import { LoginComponent } from './login/login.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +27,10 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent},
-      { path: 'game', component: GameComponent},
-      { path: '', redirectTo: '/home', pathMatch: 'full'}
-      { path: 'login', component: LoginComponent},
-
+        { path: 'home', component: HomeComponent },
+        { path: 'game', component: GameComponent },
+        { path: 'login', component: LoginComponent },
+        { path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
   providers: [MessagesService, GameService],

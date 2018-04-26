@@ -7,18 +7,18 @@ import { Router } from '@angular/router';
 @Injectable()
 export class GameService {
 
-  Me = User;
+    Me: User;
 
-
-  constructor(private http: Http, private_Messages: MessagesService, private _Router: Router) { 
-
+  constructor(private http: Http, private _Messages: MessagesService, private _Router: Router) {
+      
   }
 
   login(name: string, password: string){
-      if(password=='123'){
-        //Log theuser in
-        this.Me = { Name: name, MyQuotes: []};
-        this._Router.navigate(['/game']);
+      if(password == '123'){
+          // Log the user in
+          this.Me = { Name: name, MyQuotes: [] };
+          this._Router.navigate(['/game']);
       }
   }
+
 }

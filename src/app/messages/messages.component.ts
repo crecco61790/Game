@@ -8,16 +8,14 @@ import { MessagesService } from '../services/messages.service';
 })
 export class MessagesComponent implements OnInit {
 
-
   constructor( public Messages: MessagesService ) {
-   }
-
+  }
 
   ngOnInit() {
   }
 
   delete(i: number){
-    this.Messages.Messages.splice(i, 1);
+      this.Messages.Messages.splice(i, 1);
   }
 
 }

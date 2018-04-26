@@ -2,16 +2,15 @@ var express = require('express')
 var app = express.Router();
 
 module.exports = app
-
-.use(function (req, res, next) {
-  res.write('This is provided by Steve Crecco at newpaltz.edu\r\n');
-    next();
-})
-.get('/hello', function (req, res) {
-    res.write('world');
-    res.end();
-  })
-.get('/goodbye', function (req, res) {
-    res.write('New Paltz');
-    res.end();
-  })
+    .use(function(req, res, next){
+        res.write('This is provided by Steve C at newpaltz.edu\r\n');
+        next();
+    })
+    .get('/hello', function (req, res) {
+        res.write('World');
+        res.end();
+    })
+    .get('/Good Bye', function (req, res) {
+        res.write('New Paltz');
+        res.end();
+    })
