@@ -10,23 +10,22 @@ declare var googleyolo: any;
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _Game: GameService) { 
+  constructor(private _Game: GameService) {
     googleyolo.hint({
-      supportedAuthMethods: [
-        "https://accounts.google.com",
-        "googleyolo://id-and-password"
-      ],
-      supportedIdTokenProviders: [
-        {
-          uri: "https://accounts.google.com",
-          clientId: "717625024574-6jlh3qeab49hgs4abne0qhgur659q8n4.apps.googleusercontent.com"
-        }
-      ]
+        supportedAuthMethods: [
+          "https://accounts.google.com"
+        ],
+        supportedIdTokenProviders: [
+          {
+            uri: "https://accounts.google.com",
+            clientId: "717625024574-6jlh3qeab49hgs4abne0qhgur659q8n4.apps.googleusercontent.com"
+          }
+        ]
     }).then((credentials: any) =>{
-      _Game.oAuthLogin(credentials.displayName, credentials.idToken, credentials.profilePicture)
-      console.log(credentials);
+        _Game.oAuthLogin(credentials.displayName, credentials.idToken, credentials.profilePicture);
+        console.log(credentials);
     })
- }
+  }
 
   ngOnInit() {
   }
